@@ -14,6 +14,11 @@ export class AuthService {
     private readonly jwt: JwtService,
   ) {}
 
+  async getUsers() {
+    const users = await this.users.find({ order: { name: 'ASC' } })
+    return users.map(u => ({ email: u.email, name: u.name, color: u.color }))
+  }
+
   async login(dto: LoginDto) {
     const user = await this.users.findOneBy({ email: dto.email.toLowerCase().trim() })
     if (!user) throw new UnauthorizedException('Incorrect email or password.')
