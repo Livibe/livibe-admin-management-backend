@@ -24,7 +24,7 @@ class CreateDealDto {
 exports.CreateDealDto = CreateDealDto;
 __decorate([
     (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
 ], CreateDealDto.prototype, "eventName", void 0);
 __decorate([
@@ -69,4 +69,9 @@ __decorate([
     (0, class_validator_1.IsIn)(['muan', 'japan', 'kla']),
     __metadata("design:type", String)
 ], CreateDealDto.prototype, "createdBy", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", Number)
+], CreateDealDto.prototype, "order", void 0);
 //# sourceMappingURL=create-deal.dto.js.map

@@ -1,5 +1,5 @@
 export declare class CreateDealDto {
-    eventName: string;
+    eventName?: string;
     clientName: string;
     dealValue?: number;
     currency?: string;
@@ -8,4 +8,5 @@ export declare class CreateDealDto {
     approachEndDate?: string;
     note?: string;
     createdBy?: string;
+    order?: number;
 }

@@ -22,7 +22,7 @@ export class DealsService {
   ) {}
 
   findAll(): Promise<Deal[]> {
-    return this.dealRepo.find({ order: { createdAt: 'DESC' } });
+    return this.dealRepo.find({ order: { order: { direction: 'ASC', nulls: 'LAST' }, createdAt: 'ASC' } });
   }
 
   async findOne(id: string): Promise<Deal> {

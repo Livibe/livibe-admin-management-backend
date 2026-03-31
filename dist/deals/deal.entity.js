@@ -19,7 +19,7 @@ __decorate([
     __metadata("design:type", String)
 ], Deal.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({ nullable: true, default: '' }),
     __metadata("design:type", String)
 ], Deal.prototype, "eventName", void 0);
 __decorate([
@@ -54,6 +54,10 @@ __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
 ], Deal.prototype, "createdBy", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'int', nullable: true, default: null }),
+    __metadata("design:type", Number)
+], Deal.prototype, "order", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)

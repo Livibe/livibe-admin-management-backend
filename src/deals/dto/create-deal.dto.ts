@@ -11,8 +11,8 @@ const VALID_STAGES = [
 
 export class CreateDealDto {
   @IsString()
-  @IsNotEmpty()
-  eventName: string;
+  @IsOptional()
+  eventName?: string;
 
   @IsString()
   @IsNotEmpty()
@@ -47,4 +47,8 @@ export class CreateDealDto {
   @IsOptional()
   @IsIn(['muan', 'japan', 'kla'])
   createdBy?: string;
+
+  @IsNumber()
+  @IsOptional()
+  order?: number;
 }

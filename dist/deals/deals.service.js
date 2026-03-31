@@ -30,7 +30,7 @@ let DealsService = class DealsService {
         this.dealRepo = dealRepo;
     }
     findAll() {
-        return this.dealRepo.find({ order: { createdAt: 'DESC' } });
+        return this.dealRepo.find({ order: { order: { direction: 'ASC', nulls: 'LAST' }, createdAt: 'ASC' } });
     }
     async findOne(id) {
         const deal = await this.dealRepo.findOne({ where: { id } });

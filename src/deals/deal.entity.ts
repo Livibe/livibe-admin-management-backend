@@ -11,7 +11,7 @@ export class Deal {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({ nullable: true, default: '' })
   eventName: string;
 
   @Column()
@@ -39,6 +39,9 @@ export class Deal {
   // muan | japan | kla
   @Column({ nullable: true })
   createdBy: string;
+
+  @Column({ type: 'int', nullable: true, default: null })
+  order: number | null;
 
   @CreateDateColumn()
   createdAt: Date;

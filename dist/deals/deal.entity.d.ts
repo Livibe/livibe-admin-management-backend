@@ -9,6 +9,7 @@ export declare class Deal {
     approachEndDate: string;
     note: string;
     createdBy: string;
+    order: number | null;
     createdAt: Date;
     updatedAt: Date;
 }
