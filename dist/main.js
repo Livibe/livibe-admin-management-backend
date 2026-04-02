@@ -13,7 +13,7 @@ async function createApp() {
         .split(',')
         .map(o => o.trim());
     app.enableCors({
-        origin: "*",
+        origin: allowedOrigins,
         methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
         allowedHeaders: ['Content-Type', 'Authorization'],
     });

@@ -16,8 +16,7 @@ async function createApp() {
     .map(o => o.trim());
 
   app.enableCors({
-    // origin: allowedOrigins,
-    origin: "*",
+    origin: allowedOrigins,
     methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   });
