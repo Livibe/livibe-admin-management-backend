@@ -43,6 +43,16 @@ let ClientsService = class ClientsService {
         const client = await this.findOne(id);
         await this.clientRepo.remove(client);
     }
+    async upsertBySheetRowId(dto) {
+        if (!dto.sheetRowId)
+            return this.create(dto);
+        const existing = await this.clientRepo.findOne({ where: { sheetRowId: dto.sheetRowId } });
+        if (existing) {
+            Object.assign(existing, dto);
+            return this.clientRepo.save(existing);
+        }
+        return this.create(dto);
+    }
 };
 exports.ClientsService = ClientsService;
 exports.ClientsService = ClientsService = __decorate([

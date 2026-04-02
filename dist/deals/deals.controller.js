@@ -33,6 +33,9 @@ let DealsController = class DealsController {
     update(id, dto) {
         return this.dealsService.update(id, dto);
     }
+    renameClient(sheetRowId, clientName) {
+        return this.dealsService.renameClient(sheetRowId, clientName);
+    }
     remove(id) {
         return this.dealsService.remove(id);
     }
@@ -66,6 +69,14 @@ __decorate([
     __metadata("design:paramtypes", [String, update_deal_dto_1.UpdateDealDto]),
     __metadata("design:returntype", void 0)
 ], DealsController.prototype, "update", null);
+__decorate([
+    (0, common_1.Patch)('rename-client/:sheetRowId'),
+    __param(0, (0, common_1.Param)('sheetRowId')),
+    __param(1, (0, common_1.Body)('clientName')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", void 0)
+], DealsController.prototype, "renameClient", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     (0, common_1.HttpCode)(common_1.HttpStatus.NO_CONTENT),

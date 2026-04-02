@@ -74,4 +74,9 @@ __decorate([
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", Number)
 ], CreateDealDto.prototype, "order", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", String)
+], CreateDealDto.prototype, "clientSheetRowId", void 0);
 //# sourceMappingURL=create-deal.dto.js.map

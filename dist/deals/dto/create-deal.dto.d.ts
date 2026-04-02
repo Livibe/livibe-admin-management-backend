@@ -9,4 +9,5 @@ export declare class CreateDealDto {
     note?: string;
     createdBy?: string;
     order?: number;
+    clientSheetRowId?: string;
 }

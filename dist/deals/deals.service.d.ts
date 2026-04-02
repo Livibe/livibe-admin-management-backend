@@ -10,4 +10,5 @@ export declare class DealsService {
     create(dto: CreateDealDto): Promise<Deal>;
     update(id: string, dto: UpdateDealDto): Promise<Deal>;
     remove(id: string): Promise<void>;
+    renameClient(clientSheetRowId: string, clientName: string): Promise<void>;
 }

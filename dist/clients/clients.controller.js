@@ -30,6 +30,9 @@ let ClientsController = class ClientsController {
     create(dto) {
         return this.clientsService.create(dto);
     }
+    upsert(dto) {
+        return this.clientsService.upsertBySheetRowId(dto);
+    }
     update(id, dto) {
         return this.clientsService.update(id, dto);
     }
@@ -58,6 +61,13 @@ __decorate([
     __metadata("design:paramtypes", [create_client_dto_1.CreateClientDto]),
     __metadata("design:returntype", void 0)
 ], ClientsController.prototype, "create", null);
+__decorate([
+    (0, common_1.Post)('upsert'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_client_dto_1.CreateClientDto]),
+    __metadata("design:returntype", void 0)
+], ClientsController.prototype, "upsert", null);
 __decorate([
     (0, common_1.Patch)(':id'),
     __param(0, (0, common_1.Param)('id')),

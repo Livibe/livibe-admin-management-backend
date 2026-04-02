@@ -52,4 +52,9 @@ export class DealsService {
     const deal = await this.findOne(id);
     await this.dealRepo.remove(deal);
   }
+
+  // Update clientName on all deals matching a sheetRowId (handles company renames)
+  async renameClient(clientSheetRowId: string, clientName: string): Promise<void> {
+    await this.dealRepo.update({ clientSheetRowId }, { clientName });
+  }
 }

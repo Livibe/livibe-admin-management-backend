@@ -32,6 +32,12 @@ export class ClientsController {
     return this.clientsService.create(dto);
   }
 
+  // Sheet sync — upsert by sheetRowId so name changes don't create duplicates
+  @Post('upsert')
+  upsert(@Body() dto: CreateClientDto) {
+    return this.clientsService.upsertBySheetRowId(dto);
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() dto: UpdateClientDto) {
     return this.clientsService.update(id, dto);

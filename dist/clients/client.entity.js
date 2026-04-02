@@ -23,7 +23,7 @@ __decorate([
     __metadata("design:type", String)
 ], Client.prototype, "companyName", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: 'other' }),
+    (0, typeorm_1.Column)({ nullable: true, default: null }),
     __metadata("design:type", String)
 ], Client.prototype, "industry", void 0);
 __decorate([
@@ -35,7 +35,7 @@ __decorate([
     __metadata("design:type", String)
 ], Client.prototype, "website", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: 'cold_lead' }),
+    (0, typeorm_1.Column)({ nullable: true, default: null }),
     __metadata("design:type", String)
 ], Client.prototype, "status", void 0);
 __decorate([
@@ -74,6 +74,10 @@ __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
 ], Client.prototype, "whoApproach", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true, unique: true }),
+    __metadata("design:type", String)
+], Client.prototype, "sheetRowId", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)

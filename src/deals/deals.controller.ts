@@ -37,6 +37,15 @@ export class DealsController {
     return this.dealsService.update(id, dto);
   }
 
+  // Rename clientName on all deals for a given sheetRowId
+  @Patch('rename-client/:sheetRowId')
+  renameClient(
+    @Param('sheetRowId') sheetRowId: string,
+    @Body('clientName') clientName: string,
+  ) {
+    return this.dealsService.renameClient(sheetRowId, clientName);
+  }
+
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id') id: string) {

@@ -8,5 +8,6 @@ export declare class DealsController {
     findOne(id: string): Promise<import("./deal.entity").Deal>;
     create(dto: CreateDealDto): Promise<import("./deal.entity").Deal>;
     update(id: string, dto: UpdateDealDto): Promise<import("./deal.entity").Deal>;
+    renameClient(sheetRowId: string, clientName: string): Promise<void>;
     remove(id: string): Promise<void>;
 }

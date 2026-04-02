@@ -14,7 +14,7 @@ export class Client {
   @Column()
   companyName: string;
 
-  @Column({ default: 'other' })
+  @Column({ nullable: true, default: null })
   industry: string;
 
   @Column({ nullable: true })
@@ -23,7 +23,7 @@ export class Client {
   @Column({ nullable: true })
   website: string;
 
-  @Column({ default: 'cold_lead' })
+  @Column({ nullable: true, default: null })
   status: string;
 
   @Column({ nullable: true })
@@ -56,6 +56,10 @@ export class Client {
   // Who approached: muan | japan | kla
   @Column({ nullable: true })
   whoApproach: string;
+
+  // Stable key from Google Sheet / Excel row — used to upsert without relying on company name
+  @Column({ nullable: true, unique: true })
+  sheetRowId: string;
 
   @CreateDateColumn()
   createdAt: Date;

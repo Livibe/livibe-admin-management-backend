@@ -13,4 +13,5 @@ export declare class CreateClientDto {
     contact2Email?: string;
     contactPersonGmail?: string;
     whoApproach?: string;
+    sheetRowId?: string;
 }

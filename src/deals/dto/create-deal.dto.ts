@@ -51,4 +51,8 @@ export class CreateDealDto {
   @IsNumber()
   @IsOptional()
   order?: number;
+
+  @IsString()
+  @IsOptional()
+  clientSheetRowId?: string;
 }

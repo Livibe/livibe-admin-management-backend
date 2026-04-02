@@ -57,6 +57,9 @@ let DealsService = class DealsService {
         const deal = await this.findOne(id);
         await this.dealRepo.remove(deal);
     }
+    async renameClient(clientSheetRowId, clientName) {
+        await this.dealRepo.update({ clientSheetRowId }, { clientName });
+    }
 };
 exports.DealsService = DealsService;
 exports.DealsService = DealsService = __decorate([

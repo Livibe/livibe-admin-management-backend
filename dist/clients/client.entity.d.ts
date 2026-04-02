@@ -14,6 +14,7 @@ export declare class Client {
     contact2Email: string;
     contactPersonGmail: string;
     whoApproach: string;
+    sheetRowId: string;
     createdAt: Date;
     updatedAt: Date;
 }

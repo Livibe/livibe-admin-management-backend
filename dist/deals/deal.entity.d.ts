@@ -10,6 +10,7 @@ export declare class Deal {
     note: string;
     createdBy: string;
     order: number | null;
+    clientSheetRowId: string;
     createdAt: Date;
     updatedAt: Date;
 }

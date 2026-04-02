@@ -43,6 +43,10 @@ export class Deal {
   @Column({ type: 'int', nullable: true, default: null })
   order: number | null;
 
+  // Stable key from sheet row — used to update clientName when company is renamed
+  @Column({ nullable: true })
+  clientSheetRowId: string;
+
   @CreateDateColumn()
   createdAt: Date;
 

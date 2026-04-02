@@ -10,4 +10,5 @@ export declare class ClientsService {
     create(dto: CreateClientDto): Promise<Client>;
     update(id: string, dto: UpdateClientDto): Promise<Client>;
     remove(id: string): Promise<void>;
+    upsertBySheetRowId(dto: CreateClientDto): Promise<Client>;
 }

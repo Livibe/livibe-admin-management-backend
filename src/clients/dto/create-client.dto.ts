@@ -62,4 +62,9 @@ export class CreateClientDto {
   @IsString()
   @IsOptional()
   whoApproach?: string;
+
+  // Stable row key from sheet
+  @IsString()
+  @IsOptional()
+  sheetRowId?: string;
 }
